@@ -1,18 +1,21 @@
 // tic tac toe user interface
-const store = require('./store.js')
 // set initial conditions at game start
-let player = null
+let actualPlayer = 'x'
 let gameBoard = []
+console.log(actualPlayer, gameBoard)
 // player x goes first and the gameBoard is an array of nine
-const gameStart = function () {
-  currentPlayer = 'x'
-  gameBoard = [null, null, null, null, null, null, null, null, null]
+//
+const newGame = () => {
+  actualPlayer = 'x'
+  gameBoard = [undefined, undefined, undefined, undefined, undefined,
+  undefined, undefined, undefined, undefined]
 }
+
 /*
 [ 0, 1, 2,
   3, 4, 5,
   6, 7, 8 ]
-*/
+
 // define win conditions
 const winConditions = function () {
     let row0 = gameBoard[0], gameBoard[1], gameBoard[2]
@@ -52,12 +55,8 @@ const playerTurn = function () {
 // invalidMove
 // pull array using array indexes
 //
-
+*/
 
 module.exports = {
-  gameStart,
-  winConditions,
-  checkConditions,
-  updateConditions,
-  playerTurn
+  newGame
 }

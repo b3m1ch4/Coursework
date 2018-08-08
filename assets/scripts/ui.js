@@ -1,19 +1,18 @@
-const gameLogic = require('./gamelogic.js')
 //
 const startSuccess = function (response) {
-  $('#user-message').html('<p>go!</p>')
+  $('#user-message').html('<p>yay!</p>')
 }
 
 const startFailure = function (response) {
   $('#user-message').html('<p>oops?</p>')
 }
 
-const validMove = function () {
-
+const validMove = function (response) {
+  $('#user-message').html('<p>yay!</p>')
 }
 
-const invalidMove = function () {
-
+const invalidMove = function (response) {
+  $('#user-message').html('<p>oops?</p>')
 }
 
 module.exports = {
