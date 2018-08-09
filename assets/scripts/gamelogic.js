@@ -1,24 +1,23 @@
 // tic tac toe user interface
 // set initial conditions at game start
 // player x goes first and the gameBoard is an array of nine
-let actualPlayer = 'X'
-let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
-//
-const updateBoard = function (i, playerName) {
-  gameBoard[i] = (playerName)
-  actualPlayer = changePlayer(playerName)
-  console.log(actualPlayer)
-  console.log(gameBoard)
-}
-
-
-let changePlayer = function (playerName) {
-  if (playerName === 'X') {
-    return 'O'
-  } else if (playerName === 'O') {
-    return 'X'
+let current = {
+  player: 'X',
+  changePlayer: function () {
+    if (this.player == 'X') {
+      this.player = 'O'
+    } else if (this.player == 'O')
+      this.player = 'X'
   }
 }
+// current.prototype.changePlayer = changePlayer
+//
+let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+//
+const updateBoard = function (i, player) {
+  gameBoard[i] = (player)
+}
+
 /*
 [ 0, 1, 2,
   3, 4, 5,
@@ -65,7 +64,7 @@ const updateConditions = function () {}
 */
 
 module.exports = {
-  actualPlayer,
   gameBoard,
-  updateBoard
+  updateBoard,
+  current
 }
