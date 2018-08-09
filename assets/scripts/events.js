@@ -22,9 +22,10 @@ let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
   if (gameLogic.gameBoard[i] === undefined) {
     gameLogic.updateBoard(i, gameLogic.current.player)
-    console.log(gameLogic.gameBoard)
+    ui.validMove(event.target, gameLogic.current.player)
     gameLogic.current.changePlayer()
-    console.log(gameLogic.current.player)
+  } else {
+    ui.invalidMove()
   }
 }
 
