@@ -17,17 +17,23 @@ const onNewGame = function () {
 //
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
-  if (gameLogic.gameBoard[i] === undefined) {
+  if ((gameLogic.gameBoard[i] === undefined) && (gameLogic.current.gameOver === false)) {
     gameLogic.updateBoard(i, gameLogic.current.player)
     gameUi.validMove(event.target, gameLogic.current.player)
-    gameLogic.current.changePlayer()
     gameLogic.winConditions()
-  } else {
+      if (gameLogic.current.gameOver === false) {
+        gameLogic.current.changePlayer()
+      } else if (gameLogic.current.gameOver === true) {
+        gameUi.declareWinner(gameLogic.current.player)
+       }
+    } else if (gameLogic.current.gameOver === false) {
     gameUi.invalidMove()
+  } else if (gameLogic.current.gameOver === true) {
+    gameUi.promptNew(gameLogic.current.player)
   }
 }
 //
-const gameplayHandlers = function () {
+let gameplayHandlers = function () {
   $('#start-button').on('submit', onNewGame)
   $('#0box').on('click', logicCheck)
   $('#1box').on('click', logicCheck)
