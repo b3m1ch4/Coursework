@@ -13,21 +13,103 @@ const onNewGame = function () {
     .catch(ui.startFailure) */
 }
 
+<<<<<<< HEAD
 const placeToken = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('actualPlayer is', gameLogic.actualPlayer)
   console.log('playerToken is', gameLogic.playerToken)
   $(event.target.id).html('<p> x </p>')
+=======
+const placeToken = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+}
+
+let logicCheck0 = function (event) {
+  if (gameLogic.gameBoard[0] === undefined) {
+    gameLogic.updateBoard(gameLogic.gameBoard[0], gameLogic.actualPlayer,)
+    //ui.validMove(event.target, gameLogic.gameBoard[0]))
+  } else ui.invalidMove()
+}
+
+let logicCheck1 = function (event) {
+  if (gameLogic.gameBoard[1] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck2 = function (event) {
+  if (gameLogic.gameBoard[2] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck3 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck4 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck5 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck6 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck7 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck8 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+}
+
+let logicCheck9 = function (event) {
+  if (gameLogic.gameBoard[3] === undefined) {
+    ui.validMove(event.target, gameLogic.actualPlayer)
+  }
+>>>>>>> logic
 }
 
 const addHandlers = function () {
   $('#start-button').on('submit', onNewGame)
+<<<<<<< HEAD
   $('.box').on('click', function () {console.log('token is', gameLogic.playerToken)})
   $('#box1').on('click', function () {console.log('token is', )})
+=======
+  $('#box0').on('click', logicCheck0)
+  $('#box1').on('click', logicCheck1)
+  $('#box2').on('click', logicCheck2)
+  $('#box3').on('click', logicCheck4)
+  $('#box4').on('click', logicCheck5)
+  $('#box5').on('click', logicCheck6)
+  $('#box6').on('click', logicCheck7)
+  $('#box7').on('click', logicCheck8)
+  $('#box8').on('click', logicCheck9)
+>>>>>>> logic
 }
 
 module.exports = {
   addHandlers,
+<<<<<<< HEAD
   gameLogic
+=======
+>>>>>>> logic
 }
