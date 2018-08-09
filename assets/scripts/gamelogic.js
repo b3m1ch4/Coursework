@@ -4,20 +4,21 @@
 let actualPlayer = 'X'
 let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 //
-const updateBoard = function (element, playerName) {
-  element = playerName
+const updateBoard = function (i, playerName) {
+  gameBoard[i] = (playerName)
+  actualPlayer = changePlayer(playerName)
+  console.log(actualPlayer)
   console.log(gameBoard)
 }
-const changePlayer = function (actualPlayer) {
-  if (actualPlayer === 'X') {
-    actualPlayer = 'O'
-    return actualPlayer
-  } else if (actualPlayer === 'O') {
-    actualPlayer = 'X'
-    return actualPlayer
+
+
+let changePlayer = function (playerName) {
+  if (playerName === 'X') {
+    return 'O'
+  } else if (playerName === 'O') {
+    return 'X'
   }
 }
-
 /*
 [ 0, 1, 2,
   3, 4, 5,
@@ -66,6 +67,5 @@ const updateConditions = function () {}
 module.exports = {
   actualPlayer,
   gameBoard,
-  changePlayer,
   updateBoard
 }
