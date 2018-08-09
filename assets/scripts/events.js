@@ -19,6 +19,7 @@ let logicCheck = function (event) {
     gameLogic.updateBoard(i, gameLogic.current.player)
     ui.validMove(event.target, gameLogic.current.player)
     gameLogic.current.changePlayer()
+    gameLogic.winConditions()
   } else {
     ui.invalidMove()
   }

@@ -1,6 +1,13 @@
-// tic tac toe user interface
-// set initial conditions at game start
-// player x goes first and the gameBoard is an array of nine
+/* tic tac toe user interface
+set initial conditions at game start
+player x goes first and the gameBoard is an array of nine
+player turn: click grid, check api, if valid update api, if api updated update
+game board, check win conditions, if game continues change turn
+check for win conditions at the end of each turn
+valid move
+invalidMove
+pull array using array indexes
+*/
 let current = {
   player: 'X',
   changePlayer: function () {
@@ -10,65 +17,40 @@ let current = {
       this.player = 'X'
   }
 }
+//
 let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 const updateBoard = function (i, player) {
   gameBoard[i] = (player)
 }
-/*
-[ 0, 1, 2,
-  3, 4, 5,
-  6, 7, 8 ]
-
-  let newGame = function () {
-    actualPlayer = 'x'
-    gameBoard = [undefined, undefined, undefined, undefined, undefined,
-    undefined, undefined, undefined, undefined]
-  } */
-
-// define win conditions
-/*
-
-if () || () || () ||
-() || () || () ||
-() || ()) {
-  gameOver = true
+//
+let winConditions = function () {
+  if ((gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') || (gameBoard[0] ==='O' && gameBoard[1] === 'O' && gameBoard[2] === 'O')) {
+  console.log('game over')
+} else if ((gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') || (gameBoard[0] ==='O' && gameBoard[1] === 'O' && gameBoard[2] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') || (gameBoard[3] ==='O' && gameBoard[4] === 'O' && gameBoard[5] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[6] === 'X' && gameBoard[7] === 'X' && gameBoard[8] === 'X') || (gameBoard[6] ==='O' && gameBoard[7] === 'O' && gameBoard[8] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') || (gameBoard[0] ==='O' && gameBoard[3] === 'O' && gameBoard[6] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') || (gameBoard[1] ==='O' && gameBoard[4] === 'O' && gameBoard[7] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[2] === 'X' && gameBoard[5] === 'X' && gameBoard[8] === 'X') || (gameBoard[2] ==='O' && gameBoard[5] === 'O' && gameBoard[8] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') || (gameBoard[0] ==='O' && gameBoard[4] === 'O' && gameBoard[8] === 'O')) {
+console.log('game over')
+} else if ((gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X') || (gameBoard[2] ==='O' && gameBoard[4] === 'O' && gameBoard[6] === 'O')) {
+console.log('game over')
 } else {
-  gameOver = false
-}
-}
-return gameOver */
-let winConditions = {
-  gameOver: false,
-  row0: [gameBoard[0], gameBoard[1], gameBoard[2]],
-  row3: [gameBoard[3], gameBoard[4], gameBoard[5]],
-  row6: [gameBoard[6], gameBoard[7], gameBoard[8]],
-  column0: [gameBoard[0], gameBoard[3], gameBoard[6]],
-  column1: [gameBoard[1], gameBoard[4], gameBoard[7]],
-  column2: [gameBoard[2], gameBoard[5], gameBoard[8]],
-  diagonal0: [gameBoard[0], gameBoard[4], gameBoard[8]],
-  diagonal2: [gameBoard[2], gameBoard[4], gameBoard[6]],
-  check: function () {
-    if (this.row0.every('X') === true) {
-      this.gameOver = true
-      console.log(this.gameOver)
-  } else {
-    this.gameOver = false
-    }
+  console.log('game not over')
   }
 }
-/*
-// player turn: click grid, check api, if valid update api, if api updated update
-// game board, check win conditions, if game continues change turn
-// check for win conditions at the end of each turn
-// valid move
-
-// invalidMove
-// pull array using array indexes
 //
-*/
 
 module.exports = {
   gameBoard,
   updateBoard,
-  current
+  current,
+  winConditions
 }
