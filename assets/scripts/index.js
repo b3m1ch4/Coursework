@@ -1,6 +1,7 @@
 'use strict'
-const events = require('./events.js')
-const authentication = require('./apiEvents/auth/authEvents.js')
+//required files
+const events = require('./gameplay/gameEvents.js')
+const authentication = require('./auth/authEvents.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 

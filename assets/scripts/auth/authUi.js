@@ -1,5 +1,6 @@
+'use strict'
 // required files
-const store = require('../../store.js')
+const store = require('../store.js')
 //
 const signUpSuccess = function () {
   $('#user-message').text('registration success!')

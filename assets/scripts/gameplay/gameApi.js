@@ -1,3 +1,4 @@
+'use strict'
 // required files
 const config = require('../config.js')
 //

@@ -1,8 +1,10 @@
-const getFormFields = require('../../lib/get-form-fields.js')
-//const api = require('./api.js')
-const gameLogic = require('./gamelogic.js')
-const ui = require('./ui.js')
-
+'use strict'
+// required files
+const getFormFields = require('../../../lib/get-form-fields.js')
+//const api = require('./gameApi.js')
+const gameLogic = require('./gameLogic.js')
+const gameUi = require('./gameUi.js')
+//
 const onNewGame = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -12,19 +14,19 @@ const onNewGame = function () {
       .catch(ui.startFailure)
     .catch(ui.startFailure) */
 }
-
+//
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
   if (gameLogic.gameBoard[i] === undefined) {
     gameLogic.updateBoard(i, gameLogic.current.player)
-    ui.validMove(event.target, gameLogic.current.player)
+    gameUi.validMove(event.target, gameLogic.current.player)
     gameLogic.current.changePlayer()
     gameLogic.winConditions()
   } else {
-    ui.invalidMove()
+    gameUi.invalidMove()
   }
 }
-
+//
 const gameplayHandlers = function () {
   $('#start-button').on('submit', onNewGame)
   $('#0box').on('click', logicCheck)
@@ -37,7 +39,7 @@ const gameplayHandlers = function () {
   $('#7box').on('click', logicCheck)
   $('#8box').on('click', logicCheck)
 }
-
+//
 module.exports = {
   gameplayHandlers,
 }

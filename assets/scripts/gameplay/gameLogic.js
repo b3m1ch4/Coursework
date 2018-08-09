@@ -1,3 +1,4 @@
+'use strict'
 /* tic tac toe user interface
 set initial conditions at game start
 player x goes first and the gameBoard is an array of nine

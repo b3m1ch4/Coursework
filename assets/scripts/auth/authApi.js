@@ -1,6 +1,7 @@
+'use strict'
 // required files
-const config = require('../../config.js')
-const store = require('../../store.js')
+const config = require('../config.js')
+const store = require('../store.js')
 //
 const signUp = function (data) {
   return $.ajax({
