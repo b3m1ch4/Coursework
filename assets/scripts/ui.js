@@ -9,6 +9,7 @@ const startFailure = function (response) {
 
 const validMove = function (response) {
   $('#user-message').html('<p>yay!</p>')
+
 }
 
 const invalidMove = function (response) {

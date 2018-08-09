@@ -1,20 +1,35 @@
 // tic tac toe user interface
 // set initial conditions at game start
-let actualPlayer = 'x'
-let gameBoard = []
-console.log(actualPlayer, gameBoard)
 // player x goes first and the gameBoard is an array of nine
+let actualPlayer = 'X'
+let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 //
-const newGame = () => {
-  actualPlayer = 'x'
-  gameBoard = [undefined, undefined, undefined, undefined, undefined,
-  undefined, undefined, undefined, undefined]
+const placeToken = function (value) {
+  for (var i = 0; i < gameBoard.length; i++) {
+    if (value === gameBoard[i] && gameBoard[i] === undefined) {
+    gameBoard[i].push(actualPlayer)
+    console.log(gameBoard)
+    }
+  }
+}
+const playerToken = function () {
+  if (actualPlayer === 'X') {
+    return 'X'
+  } else if (actualPlayer ==='O') {
+    return 'O'
+  }
 }
 
 /*
 [ 0, 1, 2,
   3, 4, 5,
   6, 7, 8 ]
+
+  let newGame = function () {
+    actualPlayer = 'x'
+    gameBoard = [undefined, undefined, undefined, undefined, undefined,
+    undefined, undefined, undefined, undefined]
+  }
 
 // define win conditions
 const winConditions = function () {
@@ -44,19 +59,13 @@ const updateConditions = function () {}
 // game board, check win conditions, if game continues change turn
 // check for win conditions at the end of each turn
 // valid move
-const playerTurn = function () {
 
-  if (player = 'x') {
-    player ='o'
-  } else if (player ='o') {
-    player = 'x'
-  }
-}
 // invalidMove
 // pull array using array indexes
 //
 */
 
 module.exports = {
-  newGame
+  actualPlayer,
+  gameBoard
 }
