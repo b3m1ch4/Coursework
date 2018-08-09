@@ -1,24 +1,24 @@
-// req
-// const authenticate = require('./authApi.js')
+// required files
+const store = require('../../store.js')
 //
 const signUpSuccess = function () {
-  $('#userMessage').text('registration success!')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('success')
+  $('#user-message').text('registration success!')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('success')
   $('#sign-up input').val('')
 }
-
+//
 const signUpFail = function () {
-  $('#userMessage').text('registration failure :(')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('fail')
+  $('#user-message').text('registration failure :(')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('fail')
   $('#sign-up input').val('')
 }
 //
 const signInSuccess = function (response) {
-  $('#userMessage').text('welcome back!')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('success')
+  $('#user-message').text('welcome back!')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('success')
   $('#sign-in input').val('')
   store.user = response.user
   $('#change-password').show()
@@ -29,36 +29,36 @@ const signInSuccess = function (response) {
 }
 //
 const signInFail = function () {
-  $('#userMessage').text('login failure, please try again')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('fail')
+  $('#user-message').text('login failure, please try again')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('fail')
   $('#sign-in input').val('')
 }
 //
 const changePasswordSuccess = function () {
-  $('#userMessage').text('your password was updated')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('success')
+  $('#user-message').text('your password was updated')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('success')
   $('#change-password input').val('')
 }
 //
 const changePasswordFail = function () {
-  $('#userMessage').text('password could not be changed, please try again')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('fail')
+  $('#user-message').text('password could not be changed, please try again')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('fail')
   $('#change-password input').val('')
 }
 //
 const signOutSuccess = function () {
-  $('#userMessage').text('see you again soon!')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('success')
+  $('#user-message').text('see you again soon!')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('success')
 }
 //
 const signOutFail = function () {
-  $('#userMessage').text('your request could not be completed')
-  $('#userMessage').removeClass()
-  $('#userMessage').addClass('fail')
+  $('#user-message').text('your request could not be completed')
+  $('#user-message').removeClass()
+  $('#user-message').addClass('fail')
 }
 //
   module.exports = {

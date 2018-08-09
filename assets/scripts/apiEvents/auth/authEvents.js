@@ -7,18 +7,18 @@ const onSignUp = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
   //
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFail)
+  authApi.signUp(data)
+    .then(authUi.signUpSuccess)
+    .catch(authUi.signUpFail)
 }
 
 const onSignIn = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
   //
-  api.signIn(data)
-    .then(ui.signInSuccess)
-    .catch(ui.signInFail)
+  authApi.signIn(data)
+    .then(authUi.signInSuccess)
+    .catch(authUi.signInFail)
 }
 
 const onChangePassword = function () {
@@ -26,18 +26,18 @@ const onChangePassword = function () {
   const data = getFormFields(event.target)
   console.log('data from form', data)
   //
-  api.changePassword(data)
-    .then(ui.changePasswordSuccess)
-    .catch(ui.changePasswordFail)
+  authApi.changePassword(data)
+    .then(authUi.changePasswordSuccess)
+    .catch(authUi.changePasswordFail)
 }
 
 const onSignOut = function () {
 //  event.preventDefault()
   const data = getFormFields(event.target)
   //
-  api.signOut(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFail)
+  authApi.signOut(data)
+    .then(authUi.signOutSuccess)
+    .catch(authUi.signOutFail)
 }
 
 const authHandlers = function () {

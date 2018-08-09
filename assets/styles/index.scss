@@ -31,6 +31,10 @@ body {
   background-color: $magenta;
 }
 
+#game-board {
+  display: none;
+}
+
 .header {
   align-self: center;
   background-color: $blue;
@@ -38,8 +42,12 @@ body {
   width: 65%;
 }
 
-.hidden {
-  display: none
+.logged-in {
+  display: none;
+}
+
+.logged-out{
+
 }
 
 .userMessage {

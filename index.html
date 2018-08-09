@@ -15,7 +15,7 @@
       <h1>bork bork meow</h1>
       <div class="userMessage" id="user-message"></div>
 
-      <form id='sign-up' class="border">
+      <form id='sign-up' class="border logged-out">
         <fieldset>
           <legend>sign up</legend>
           <input type ="email" name="credentials[email]" placeholder ="email">
@@ -25,7 +25,7 @@
         </fieldset>
       </form>
 
-      <form id="sign-in" class="border">
+      <form id="sign-in" class="border logged-out">
         <fieldset>
         <legend>sign in</legend>
         <input type ="email" name="credentials[email]" placeholder ="email">
@@ -34,7 +34,7 @@
       </fieldset>
       </form>
 
-      <form id="change-password" class="border hidden">
+      <form id="change-password" class="border logged-in">
         <fieldset>
         <legend>change password</legend>
         <input type ="password" name="passwords[old]" placeholder ="old password">
@@ -43,13 +43,13 @@
       </fieldset>
       </form>
 
-      <form id="sign-out" class="border hidden">
+      <form id="sign-out" class="border logged-in">
         <fieldset>
           <button type="submit">sign out</button>
         </fieldset>
       </form>
 
-      <div class="container hidden" id="game-board">
+      <div class="container logged-in" id="game-board">
         <div class="row">
           <div class="col-sm-4 box teal" id="0box">token: </div>
           <div class="col-sm-4 box grey" id="1box">token: </div>
