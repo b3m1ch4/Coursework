@@ -47,7 +47,6 @@ console.log('game over')
   }
 }
 //
-
 module.exports = {
   gameBoard,
   updateBoard,

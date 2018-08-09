@@ -25,7 +25,7 @@ let logicCheck = function (event) {
   }
 }
 
-const addHandlers = function () {
+const gameplayHandlers = function () {
   $('#start-button').on('submit', onNewGame)
   $('#0box').on('click', logicCheck)
   $('#1box').on('click', logicCheck)
@@ -39,5 +39,5 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers,
+  gameplayHandlers,
 }
