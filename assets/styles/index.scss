@@ -1,2 +1,39 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$black: #000;
+$blue: #7ee8fa;
+$green: #5cf64a;
+$magenta: #e516d4;
+$sunny: #fff07c;
+$vanilla: #cacaaa;
+$white: #fff;
+
+body {
+  background-color: $vanilla;
+  color: $sunny;
+}
+
+.box {
+  align-items: center;
+  border: 1.5px dashed $white;
+  color: $sunny;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+}
+
+.grey {
+  background-color: $green;
+}
+
+.teal {
+  background-color: $magenta;
+}
+
+.header {
+  align-self: center;
+  background-color: $blue;
+  color: $white;
+  width: 65%;
+}

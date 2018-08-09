@@ -4,19 +4,17 @@
 let actualPlayer = 'X'
 let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 //
-const placeToken = function (value) {
-  for (var i = 0; i < gameBoard.length; i++) {
-    if (value === gameBoard[i] && gameBoard[i] === undefined) {
-    gameBoard[i].push(actualPlayer)
-    console.log(gameBoard)
-    }
-  }
+const updateBoard = function (element, playerName) {
+  element = playerName
+  console.log(gameBoard)
 }
-const playerToken = function () {
+const changePlayer = function (actualPlayer) {
   if (actualPlayer === 'X') {
-    return 'X'
-  } else if (actualPlayer ==='O') {
-    return 'O'
+    actualPlayer = 'O'
+    return actualPlayer
+  } else if (actualPlayer === 'O') {
+    actualPlayer = 'X'
+    return actualPlayer
   }
 }
 
@@ -67,5 +65,7 @@ const updateConditions = function () {}
 
 module.exports = {
   actualPlayer,
-  gameBoard
+  gameBoard,
+  changePlayer,
+  updateBoard
 }
