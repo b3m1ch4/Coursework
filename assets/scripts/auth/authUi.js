@@ -1,5 +1,5 @@
 'use strict'
-/* ===== required files ===== */ 
+/* ===== required files ===== */
 const store = require('../store.js')
 //
 const signUpSuccess = function () {
@@ -22,11 +22,8 @@ const signInSuccess = function (response) {
   $('#user-message').addClass('success')
   $('#sign-in input').val('')
   store.user = response.user
-  $('#change-password').show()
-  $('#sign-out').show()
-  $('#game-board').show()
-  $('#sign-up').hide()
-  $('#sign-in').hide()
+  $('.logged-in').show()
+  $('.logged-out').hide()
 }
 //
 const signInFail = function () {
@@ -54,6 +51,8 @@ const signOutSuccess = function () {
   $('#user-message').text('see you again soon!')
   $('#user-message').removeClass()
   $('#user-message').addClass('success')
+  $('.logged-in').hide()
+  $('.logged-out').show()
 }
 //
 const signOutFail = function () {

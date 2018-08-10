@@ -49,8 +49,6 @@ const onNewGame = function (event) {
 const onPatchGame = function (event) {
   event.preventDefault()
   let i = event.target.id.slice(0, 1)
-  console.log('i is', i)
-  console.log('current player is', gameLogic.current.player)
 // store update game?
   const data = {
   "game": {
@@ -61,7 +59,6 @@ const onPatchGame = function (event) {
     "over": false
   }
 }
-  console.log('data are', data)
   gameApi.patchGame(data)
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)

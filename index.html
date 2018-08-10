@@ -15,7 +15,7 @@
       <h1>bork bork meow</h1>
       <div class="message" id="user-message"></div>
 
-      <form id='sign-up' class="border logged-out">
+      <form class="border logged-out" id="sign-up">
         <fieldset>
           <legend>sign up</legend>
           <input type ="email" name="credentials[email]" placeholder ="email">
@@ -25,7 +25,7 @@
         </fieldset>
       </form>
 
-      <form id="sign-in" class="border logged-out">
+      <form class="border logged-out" id="sign-in">
         <fieldset>
         <legend>sign in</legend>
         <input type ="email" name="credentials[email]" placeholder ="email">
@@ -34,7 +34,7 @@
       </fieldset>
       </form>
 
-      <form id="change-password" class="border logged-in">
+      <form class="border logged-in" id="change-password">
         <fieldset>
         <legend>change password</legend>
         <input type ="password" name="passwords[old]" placeholder ="old password">
@@ -43,13 +43,13 @@
       </fieldset>
       </form>
 
-      <form id="sign-out" class="border logged-in">
+      <form class="border logged-in" id="sign-out">
         <fieldset>
           <button type="submit">sign out</button>
         </fieldset>
       </form>
 
-      <form id="start-game" class="border logged-in">
+      <form class="border logged-in" id="start-game">
         <fieldset>
           <button type="submit">start game</button>
         </fieldset>
@@ -73,18 +73,22 @@
         </div>
       </div>
 
-      <div class="message" id="game-message"></div>
+      <div class="message logged-in" id="game-message"></div>
 
       <div>
-      <form id="games-index">
+      <form class="logged-in" id="games-index">
         <button type="submit">get all games</button>
       </form>
     </div>
 
-      <form id='find-game'>
+      <form class="logged-in" id='find-game'>
         <input type="number" name="game[id]" placeholder='your game id'>
         <button type="submit">find game</button>
       </form>
+
+<footer>
+  Impressum
+</footer>
 
     </body>
 </html>

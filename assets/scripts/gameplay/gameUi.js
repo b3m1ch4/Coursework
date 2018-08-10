@@ -45,12 +45,10 @@ const apiFail = function (response) {
 //
 const gameStart = function (response) {
   $('#game-message').html('<p> game started </p>')
-  console.log('response.game.id is', response.game.id)
   store.game = response.game
 }
 //
 const indexSuccess = function (response) {
-  console.log(response)
   response.games.forEach((game) => {
   const gameId = '<p>' + game.id + '</p>'
   const gameOver = '<p>' + game.over + '</p>'
