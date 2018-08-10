@@ -11,4 +11,5 @@ const authentication = require('./auth/authEvents.js')
 $(() => {
   events.gameplayHandlers()
   authentication.authHandlers()
+  events.userHandlers()
 })

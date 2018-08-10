@@ -6,30 +6,42 @@ const store = require('../store.js')
 const allGames = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl,
+    url: config.apiUrl + '/games/',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
   })
 }
 // get one past game
 const oneGame = function (id) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl,
+    url: config.apiUrl + '/games/' + id,
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
   })
 }
 // create a game
 const newGame = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl,
-    data: data
+    url: config.apiUrl + '/games/',
+    data,
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
   })
 }
 // update game
 const patchGame = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl,
-    data: data
+    url: config.apiUrl + '/games/',
+    data,
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
   })
 }
 //

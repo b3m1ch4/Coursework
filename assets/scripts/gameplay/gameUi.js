@@ -1,5 +1,7 @@
 'use strict'
-// game messaging
+//
+/* ========== game messaging messaging ========== */
+//
 const startSuccess = function (response) {
   $('#game-message').html('<p>yay!</p>')
 }
@@ -20,33 +22,41 @@ const invalidMove = function (response) {
 //
 const declareWinner = function (player) {
   let winner = player
-  $('#game-message').append(winner + ' wins!')
+  $('#game-message').html(winner + ' wins!')
 }
 //
 const declareDraw = function () {
-  $('#game-message').append("looks like the game drew")
+  $('#game-message').html("looks like the game drew")
 }
 //
 const promptNew = function (player) {
   let winner = player
-  $('#game-message').append("The game is over...")
+  $('#game-message').html("The game is over...")
 }
-// user messaging
-const onApiFail = function (response) {
+//
+/* ========== user messaging ========== */
+//
+const apiFail = function (response) {
+    response.preventDefault()
     $('#user-message').html('<p>API Fail. Please try again.</p>>')
 }
 //
-const onIndexSuccess = function (response) {
+const indexSuccess = function (response) {
+  console.log(response)
   response.games.forEach((game) => {
-    const gameId = '<p>' + game.id + '</p>'
-    // const gameOver = '<p>' + game.over + '</p>'
-    // const cells = '<p>' + game.cells + '</p>'
-    // const xId = '<p>' + game.player_x.id + '</p>'
-    // const xEmail = '<p>' + game.player_x.email + '</p>'
-    // const oId = '<p>' + game.player_o.id + '</p>'
-    // const oEmail = '<p>' + game.player_o.email + '</p>'
-    $('#game-message').append()
+  const gameId = '<p>' + game.id + '</p>'
+  const gameOver = '<p>' + game.over + '</p>'
+  const apiArray = '<p>' + game.cells + '</p>'
+  const idX = '<p>' + game.player_x.id + '</p>'
+  const emailX = '<p>' + game.player_x.email + '</p>'
+  // const idO = '<p>' + game.player_o.id + '</p>'
+  // const emailO = '<p>' + game.player_o.email + '</p>'
+  $('#game-message').append(response + gameId + gameOver + apiArray + idX + emailX)
   })
+}
+//
+const gameStart = function (response) {
+  $('#game-message').html('<p> game started </p>')
 }
 //
 module.exports = {
@@ -55,5 +65,7 @@ module.exports = {
   validMove,
   invalidMove,
   declareWinner,
-  promptNew
+  promptNew,
+  indexSuccess,
+  gameStart
 }

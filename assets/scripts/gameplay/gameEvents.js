@@ -25,21 +25,19 @@ let logicCheck = function (event) {
 //
 const onAllGames = function (event) {
   event.preventDefault()
-  gameApi.index()
-    .then(gameUi.onIndexSuccess)
-    .catch(gameUi.onApiFail)
+  gameApi.allGames()
+    .then(gameUi.indexSuccess)
+    .catch(gameUi.apiFail)
 }
 //
 const onOneGame = function () {}
 //
-const onNewGame = function () {
-  // event.preventDefault()
-  // const data = getFormFields(event.target)
-  //   .then(gameLogic.newGame)
-  // api.startGame(data)
-  //     .then(ui.startSuccess)
-  //     .catch(ui.startFailure)
-  //   .catch(ui.startFailure)
+const onNewGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  gameApi.newGame(data)
+  .then(gameUi.gameStart)
+  .catch(gameUi.apiFail)
 }
 //
 const onPatchGame = function () {}
@@ -59,6 +57,7 @@ let gameplayHandlers = function () {
 //
 let userHandlers = function () {
   $('#games-index').on('click', onAllGames)
+  $('#start-game').on('click', onNewGame)
 }
 //
 module.exports = {
