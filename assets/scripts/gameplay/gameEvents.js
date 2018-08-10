@@ -1,19 +1,9 @@
 'use strict'
 // required files
 const getFormFields = require('../../../lib/get-form-fields.js')
-//const api = require('./gameApi.js')
+const gameApi = require('./gameApi.js')
 const gameLogic = require('./gameLogic.js')
 const gameUi = require('./gameUi.js')
-//
-const onNewGame = function () {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-    .then(gameLogic.newGame)
-  /*api.startGame(data)
-      .then(ui.startSuccess)
-      .catch(ui.startFailure)
-    .catch(ui.startFailure) */
-}
 //
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
@@ -33,6 +23,27 @@ let logicCheck = function (event) {
   }
 }
 //
+const onAllGames = function (event) {
+  event.preventDefault()
+  gameApi.index()
+    .then(gameUi.onIndexSuccess)
+    .catch(gameUi.onApiFail)
+}
+//
+const onOneGame = function () {}
+//
+const onNewGame = function () {
+  // event.preventDefault()
+  // const data = getFormFields(event.target)
+  //   .then(gameLogic.newGame)
+  // api.startGame(data)
+  //     .then(ui.startSuccess)
+  //     .catch(ui.startFailure)
+  //   .catch(ui.startFailure)
+}
+//
+const onPatchGame = function () {}
+//
 let gameplayHandlers = function () {
   $('#start-button').on('submit', onNewGame)
   $('#0box').on('click', logicCheck)
@@ -46,6 +57,11 @@ let gameplayHandlers = function () {
   $('#8box').on('click', logicCheck)
 }
 //
+let userHandlers = function () {
+  $('#games-index').on('click', onAllGames)
+}
+//
 module.exports = {
   gameplayHandlers,
+  userHandlers
 }
