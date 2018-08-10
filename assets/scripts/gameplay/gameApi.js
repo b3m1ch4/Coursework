@@ -37,7 +37,7 @@ const newGame = function (data) {
 const patchGame = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/',
+    url: config.apiUrl + '/games/' + data.game.id,
     data,
     headers: {
       'Authorization': 'Token token=' + store.user.token

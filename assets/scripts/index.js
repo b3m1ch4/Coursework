@@ -9,7 +9,7 @@ const authentication = require('./auth/authEvents.js')
 // require('./example')
 
 $(() => {
-  events.gameplayHandlers()
+  events.clientHandlers()
   authentication.authHandlers()
-  events.userHandlers()
+  events.apiHandlers()
 })

@@ -51,12 +51,16 @@ const indexSuccess = function (response) {
   const emailX = '<p>' + game.player_x.email + '</p>'
   // const idO = '<p>' + game.player_o.id + '</p>'
   // const emailO = '<p>' + game.player_o.email + '</p>'
-  $('#game-message').append(response + gameId + gameOver + apiArray + idX + emailX)
+  $('#game-message').html(response + gameId + gameOver + apiArray + idX + emailX)
   })
 }
 //
 const gameStart = function (response) {
   $('#game-message').html('<p> game started </p>')
+}
+//
+const apiUpdate = function () {
+  $('#game-message').html('<p> server updated successfully </p>')
 }
 //
 module.exports = {

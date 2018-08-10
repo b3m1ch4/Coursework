@@ -1,5 +1,5 @@
 'use strict'
-// required files
+/* ===== required files ===== */
 const getFormFields = require('../../../lib/get-form-fields.js')
 const gameApi = require('./gameApi.js')
 const gameLogic = require('./gameLogic.js')
@@ -39,10 +39,22 @@ const onNewGame = function (event) {
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
 }
+// do search for a specific game after lunch
+const onPatchGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  gameApi.patchGame(data)
+  .then(gameUi.apiUpdate)
+  .catch(gameUi.apiFail)
+}
+// eventually make a promise chain for the client
+let apiHandlers = function () {
+  $('#games-index').on('click', onAllGames)
+  $('#start-game').on('click', onNewGame)
+  //$('.box').on('click', onPatchGame)
+}
 //
-const onPatchGame = function () {}
-//
-let gameplayHandlers = function () {
+let clientHandlers = function () {
   $('#start-button').on('submit', onNewGame)
   $('#0box').on('click', logicCheck)
   $('#1box').on('click', logicCheck)
@@ -55,12 +67,7 @@ let gameplayHandlers = function () {
   $('#8box').on('click', logicCheck)
 }
 //
-let userHandlers = function () {
-  $('#games-index').on('click', onAllGames)
-  $('#start-game').on('click', onNewGame)
-}
-//
 module.exports = {
-  gameplayHandlers,
-  userHandlers
+  clientHandlers,
+  apiHandlers
 }
