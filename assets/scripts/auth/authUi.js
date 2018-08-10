@@ -1,5 +1,5 @@
 'use strict'
-// required files
+/* ===== required files ===== */ 
 const store = require('../store.js')
 //
 const signUpSuccess = function () {

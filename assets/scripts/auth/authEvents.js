@@ -1,5 +1,5 @@
 'use strict'
-// required files
+/* ===== required files ===== */
 const getFormFields = require('../../../lib/get-form-fields.js')
 const authApi = require('./authApi.js')
 const authUi = require('./authUi.js')

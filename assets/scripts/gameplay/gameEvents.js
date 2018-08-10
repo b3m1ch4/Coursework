@@ -30,19 +30,26 @@ const onAllGames = function (event) {
     .catch(gameUi.apiFail)
 }
 //
-const onOneGame = function () {}
+const onFindGame = function (event) {
+  event.preventDefault()
+  const id = $('#find-game input').val()
+  gameApi.oneGame(id)
+  .then(gameUi.findGame)
+  .catch(gameUi.apiFail)
+}
 //
 const onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   gameApi.newGame(data)
-  .then(gameUi.gameStart)
+  .then(gameUi.gameStart(gameApi.newGame(data)))
   .catch(gameUi.apiFail)
 }
 // do search for a specific game after lunch
 const onPatchGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   gameApi.patchGame(data)
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)
@@ -51,7 +58,8 @@ const onPatchGame = function (event) {
 let apiHandlers = function () {
   $('#games-index').on('click', onAllGames)
   $('#start-game').on('click', onNewGame)
-  //$('.box').on('click', onPatchGame)
+  $('#find-game').on('click', onFindGame)
+  $('.box').on('click', onPatchGame)
 }
 //
 let clientHandlers = function () {

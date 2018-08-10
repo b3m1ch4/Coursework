@@ -1,4 +1,6 @@
 'use strict'
+/* ===== required files ===== */
+const store = require('../store')
 //
 /* ========== game messaging messaging ========== */
 //
@@ -41,6 +43,13 @@ const apiFail = function (response) {
     $('#user-message').html('<p>API Fail. Please try again.</p>>')
 }
 //
+const gameStart = function (response) {
+  $('#game-message').html('<p> game started </p>')
+  console.log(response)
+  store.game.id = response.game.id
+  console.log(store.game.id)
+}
+//
 const indexSuccess = function (response) {
   console.log(response)
   response.games.forEach((game) => {
@@ -51,12 +60,13 @@ const indexSuccess = function (response) {
   const emailX = '<p>' + game.player_x.email + '</p>'
   // const idO = '<p>' + game.player_o.id + '</p>'
   // const emailO = '<p>' + game.player_o.email + '</p>'
-  $('#game-message').html(response + gameId + gameOver + apiArray + idX + emailX)
+  $('#game-message').append(response + gameId + gameOver + apiArray + idX + emailX)
   })
 }
 //
-const gameStart = function (response) {
-  $('#game-message').html('<p> game started </p>')
+const findGame = function (response) {
+  let game = response.game
+  $('#game-message').html(game)
 }
 //
 const apiUpdate = function () {
@@ -70,6 +80,7 @@ module.exports = {
   invalidMove,
   declareWinner,
   promptNew,
+  gameStart,
   indexSuccess,
-  gameStart
+  findGame
 }

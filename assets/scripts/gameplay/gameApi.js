@@ -29,7 +29,8 @@ const newGame = function (data) {
     url: config.apiUrl + '/games/',
     data,
     headers: {
-      'Authorization': 'Token token=' + store.user.token
+      'Authorization': 'Token token=' + store.user.token,
+      'Content-Type': 'application/json'
     }
   })
 }
@@ -37,10 +38,11 @@ const newGame = function (data) {
 const patchGame = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + data.game.id,
+    url: config.apiUrl + '/games/' + store.game.id,
     data,
     headers: {
-      'Authorization': 'Token token=' + store.user.token
+      'Authorization': 'Token token=' + store.user.token,
+      'Content-Type': 'application/json'
     }
   })
 }
