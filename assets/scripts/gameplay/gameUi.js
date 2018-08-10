@@ -45,9 +45,8 @@ const apiFail = function (response) {
 //
 const gameStart = function (response) {
   $('#game-message').html('<p> game started </p>')
-  console.log(response)
-  store.game.id = response.game.id
-  console.log(store.game.id)
+  console.log('response.game.id is', response.game.id)
+  store.game = response.game
 }
 //
 const indexSuccess = function (response) {
@@ -82,5 +81,6 @@ module.exports = {
   promptNew,
   gameStart,
   indexSuccess,
-  findGame
+  findGame,
+  apiUpdate
 }

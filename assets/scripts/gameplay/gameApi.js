@@ -30,7 +30,6 @@ const newGame = function (data) {
     data,
     headers: {
       'Authorization': 'Token token=' + store.user.token,
-      'Content-Type': 'application/json'
     }
   })
 }
@@ -42,7 +41,7 @@ const patchGame = function (data) {
     data,
     headers: {
       'Authorization': 'Token token=' + store.user.token,
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     }
   })
 }

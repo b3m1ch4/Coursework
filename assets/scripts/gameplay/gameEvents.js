@@ -42,14 +42,26 @@ const onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   gameApi.newGame(data)
-  .then(gameUi.gameStart(gameApi.newGame(data)))
+  .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
 }
 // do search for a specific game after lunch
 const onPatchGame = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
+  let i = event.target.id.slice(0, 1)
+  console.log('i is', i)
+  console.log('current player is', gameLogic.current.player)
+// store update game?
+  const data = {
+  "game": {
+    "cell": {
+      "index": i,
+      "value": gameLogic.current.player
+    },
+    "over": false
+  }
+}
+  console.log('data are', data)
   gameApi.patchGame(data)
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)
