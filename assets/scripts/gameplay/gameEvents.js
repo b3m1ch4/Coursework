@@ -4,21 +4,22 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const gameApi = require('./gameApi.js')
 const gameLogic = require('./gameLogic.js')
 const gameUi = require('./gameUi.js')
+const store = require('../store.js')
 // rewrite logic to check the API for valid move before updating the board
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
-  if ((gameLogic.gameBoard[i] === undefined) && (gameLogic.current.gameOver === false)) {
+  if ((store.game.cells[i] === undefined) && (store.game.over === false)) {
     gameLogic.updateBoard(i, gameLogic.current.player)
     gameUi.validMove(event.target, gameLogic.current.player)
     gameLogic.winConditions()
-      if (gameLogic.current.gameOver === false) {
+      if (gameLogic.current.over === false) {
         gameLogic.current.changePlayer()
-      } else if (gameLogic.current.gameOver === true) {
-        gameUi.declareWinner(gameLogic.current.player)
+      } else if (gameLogic.current.over === true) {
+        gameUi.declareWinner(gameLogic.current.winner)
        }
-    } else if (gameLogic.current.gameOver === false) {
+    } else if (gameLogic.current.over === false) {
     gameUi.invalidMove()
-  } else if (gameLogic.current.gameOver === true) {
+  } else if (gameLogic.current.over === true) {
     gameUi.promptNew(gameLogic.current.player)
   }
 }
@@ -37,7 +38,7 @@ const onFindGame = function (event) {
   .then(gameUi.findGame)
   .catch(gameUi.apiFail)
 }
-//
+// onNewGame creates a new game in the Api
 const onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -45,25 +46,10 @@ const onNewGame = function (event) {
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
 }
-
-const newGamePatch = function () {
-for (let i = 0; i < gameLogic.gameBoard.length; i++) {
-  const data = {
-    "game": {
-      "cell": {
-        "index": i,
-        "value": null
-      },
-      "over": false
-    }
-  }
-  }
-}
 // onPatchGame updates the api with the gameBoard's info
 const onPatchGame = function (event) {
   event.preventDefault()
   let i = event.target.id.slice(0, 1)
-// store update game?
   const data = {
   "game": {
     "cell": {
@@ -77,28 +63,23 @@ const onPatchGame = function (event) {
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)
 }
-// eventually make a promise chain for the client
-let apiHandlers = function () {
+// event listeners 
+let gameplayHandlers = function () {
   $('#games-index').on('click', onAllGames)
   $('#start-game').on('click', onNewGame)
   $('#find-game').on('click', onFindGame)
-  $('.box').on('click', onPatchGame)
-}
-//
-let clientHandlers = function () {
-  $('#start-button').on('submit', onNewGame)
-  $('#0box').on('click', logicCheck)
-  $('#1box').on('click', logicCheck)
-  $('#2box').on('click', logicCheck)
-  $('#3box').on('click', logicCheck)
-  $('#4box').on('click', logicCheck)
-  $('#5box').on('click', logicCheck)
-  $('#6box').on('click', logicCheck)
-  $('#7box').on('click', logicCheck)
-  $('#8box').on('click', logicCheck)
+  // $('.box').on('click', onPatchGame, logicCheck)
+  $('#0box').on('click', onPatchGame, logicCheck)
+  $('#1box').on('click', onPatchGame, logicCheck)
+  $('#2box').on('click', onPatchGame, logicCheck)
+  $('#3box').on('click', onPatchGame, logicCheck)
+  $('#4box').on('click', onPatchGame, logicCheck)
+  $('#5box').on('click', onPatchGame, logicCheck)
+  $('#6box').on('click', onPatchGame, logicCheck)
+  $('#7box').on('click', onPatchGame, logicCheck)
+  $('#8box').on('click', onPatchGame, logicCheck)
 }
 //
 module.exports = {
-  clientHandlers,
-  apiHandlers
+  gameplayHandlers
 }

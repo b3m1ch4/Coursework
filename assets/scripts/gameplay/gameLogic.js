@@ -1,4 +1,6 @@
 'use strict'
+/* ===== required files ===== */
+const store = require('../store.js')
 /* tic tac toe user interface
 set initial conditions at game start
 player x goes first and the gameBoard is an array of nine
@@ -17,47 +19,60 @@ let current = {
     } else if (this.player == 'O')
       this.player = 'X'
   },
-  gameOver: false,
+  over: false,
   endGame: function () {
-    this.gameOver = true
+    this.over = true
+  },
+  winner: undefined
+}
+//
+let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+undefined]
+//
+const updateBoard = function (i, player) {
+  store.game.cells[i] = player
+}
+//
+let isDefined = function (x) {
+  if (x === undefined) {
+  return false
+} else {
+  return true
   }
 }
 //
-let gameBoard = store.game.cells
-const updateBoard = function (i, player) {
-  gameBoard[i] = (player)
-}
-//
 let winConditions = function () {
-  if ((gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') || (gameBoard[0] ==='O' && gameBoard[1] === 'O' && gameBoard[2] === 'O')) {
-  console.log('game over')
+  if ((store.game.cells[0] === 'X' && store.game.cells[1] === 'X' && store.game.cells[2] === 'X') || (store.game.cells[0] ==='O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') || (gameBoard[0] ==='O' && gameBoard[1] === 'O' && gameBoard[2] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[0] === 'X' && store.game.cells[1] === 'X' && store.game.cells[2] === 'X') || (store.game.cells[0] ==='O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') || (gameBoard[3] ==='O' && gameBoard[4] === 'O' && gameBoard[5] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[3] === 'X' && store.game.cells[4] === 'X' && store.game.cells[5] === 'X') || (store.game.cells[3] ==='O' && store.game.cells[4] === 'O' && store.game.cells[5] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[6] === 'X' && gameBoard[7] === 'X' && gameBoard[8] === 'X') || (gameBoard[6] ==='O' && gameBoard[7] === 'O' && gameBoard[8] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[6] === 'X' && store.game.cells[7] === 'X' && store.game.cells[8] === 'X') || (store.game.cells[6] ==='O' && store.game.cells[7] === 'O' && store.game.cells[8] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') || (gameBoard[0] ==='O' && gameBoard[3] === 'O' && gameBoard[6] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[0] === 'X' && store.game.cells[3] === 'X' && store.game.cells[6] === 'X') || (store.game.cells[0] ==='O' && store.game.cells[3] === 'O' && store.game.cells[6] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') || (gameBoard[1] ==='O' && gameBoard[4] === 'O' && gameBoard[7] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[1] === 'X' && store.game.cells[4] === 'X' && store.game.cells[7] === 'X') || (store.game.cells[1] ==='O' && store.game.cells[4] === 'O' && store.game.cells[7] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[2] === 'X' && gameBoard[5] === 'X' && gameBoard[8] === 'X') || (gameBoard[2] ==='O' && gameBoard[5] === 'O' && gameBoard[8] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[2] === 'X' && store.game.cells[5] === 'X' && store.game.cells[8] === 'X') || (store.game.cells[2] ==='O' && store.game.cells[5] === 'O' && store.game.cells[8] === 'O')) {
+current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') || (gameBoard[0] ==='O' && gameBoard[4] === 'O' && gameBoard[8] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[0] === 'X' && store.game.cells[4] === 'X' && store.game.cells[8] === 'X') || (store.game.cells[0] ==='O' && store.game.cells[4] === 'O' && store.game.cells[8] === 'O')) {
+current.winner = current.player + ' wins'
   current.endGame()
-} else if ((gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X') || (gameBoard[2] ==='O' && gameBoard[4] === 'O' && gameBoard[6] === 'O')) {
-console.log('game over')
+} else if ((store.game.cells[2] === 'X' && store.game.cells[4] === 'X' && store.game.cells[6] === 'X') || (store.game.cells[2] ==='O' && store.game.cells[4] === 'O' && store.game.cells[6] === 'O')) {
+  current.winner = current.player + ' wins'
   current.endGame()
-} else {
-  console.log('game not over')
+} else if (store.game.cells[0] !== undefined && store.game.cells[1] !== undefined && store.game.cells[2] !== undefined && store.game.cells[3] !== undefined && store.game.cells[4] !== undefined &&
+  store.game.cells[5] !== undefined && store.game.cells[6] !== undefined && store.game.cells[7] !== undefined && store.game.cells[8] !== undefined && store.game.over === false) {
+  current.winner = 'you drew'
+  current.endGame()
   }
 }
 //

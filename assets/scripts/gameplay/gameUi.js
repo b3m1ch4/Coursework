@@ -1,11 +1,13 @@
 'use strict'
 /* ===== required files ===== */
 const store = require('../store')
+const gameLogic = require('./gameLogic.js')
 //
-/* ========== game messaging messaging ========== */
-//
-const startSuccess = function (response) {
-  $('#game-message').html('<p>yay!</p>')
+const gameStart = function (response) {
+  store.game = response.game
+  store.game.cells = gameLogic.gameBoard
+  $('#game-board').show()
+  $('#game-message').html("<p>let's play!</p>")
 }
 //
 const startFailure = function (response) {
@@ -22,9 +24,8 @@ const invalidMove = function (response) {
   $('#game-message').html('<p>why not try another spot?</p>')
 }
 //
-const declareWinner = function (player) {
-  let winner = player
-  $('#game-message').html(winner + ' wins!')
+const declareWinner = function () {
+  $('#game-message').html(gameLogic.current.winner)
 }
 //
 const declareDraw = function () {
@@ -36,16 +37,9 @@ const promptNew = function (player) {
   $('#game-message').html("The game is over...")
 }
 //
-/* ========== user messaging ========== */
-//
 const apiFail = function (response) {
     response.preventDefault()
     $('#user-message').html('<p>API Fail. Please try again.</p>>')
-}
-//
-const gameStart = function (response) {
-  $('#game-message').html('<p> game started </p>')
-  store.game = response.game
 }
 //
 const indexSuccess = function (response) {
@@ -66,12 +60,11 @@ const findGame = function (response) {
   $('#game-message').html(game)
 }
 //
-const apiUpdate = function () {
-  $('#game-message').html('<p> server updated successfully </p>')
+const apiUpdate = function (response) {
+  store.game = response.game
 }
 //
 module.exports = {
-  startSuccess,
   startFailure,
   validMove,
   invalidMove,
