@@ -4,7 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const gameApi = require('./gameApi.js')
 const gameLogic = require('./gameLogic.js')
 const gameUi = require('./gameUi.js')
-//
+// rewrite logic to check the API for valid move before updating the board 
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
   if ((gameLogic.gameBoard[i] === undefined) && (gameLogic.current.gameOver === false)) {
@@ -45,7 +45,7 @@ const onNewGame = function (event) {
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
 }
-// do search for a specific game after lunch
+// onPatchGame updates the api with the gameBoard's info
 const onPatchGame = function (event) {
   event.preventDefault()
   let i = event.target.id.slice(0, 1)
