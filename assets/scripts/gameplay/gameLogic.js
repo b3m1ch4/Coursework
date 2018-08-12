@@ -23,7 +23,7 @@ let current = {
   }
 }
 //
-let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+let gameBoard = store.game.cells
 const updateBoard = function (i, player) {
   gameBoard[i] = (player)
 }
