@@ -1,6 +1,6 @@
 'use strict'
 /* ===== required files ===== */
-const store = require('../store.js')
+let store = require('../store.js')
 /* tic tac toe user interface
 set initial conditions at game start
 player x goes first and the gameBoard is an array of nine
@@ -26,7 +26,7 @@ let current = {
   winner: undefined
 }
 //
-let gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+const gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
 undefined]
 //
 const updateBoard = function (i, player) {

@@ -1,7 +1,7 @@
 'use strict'
 // required files
-const config = require('../config.js')
-const store = require('../store.js')
+let config = require('../config.js')
+let store = require('../store.js')
 // get all past games
 const allGames = function () {
   return $.ajax({

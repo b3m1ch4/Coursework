@@ -1,13 +1,15 @@
 'use strict'
 /* ===== required files ===== */
-const store = require('../store')
-const gameLogic = require('./gameLogic.js')
+let store = require('../store')
+let gameLogic = require('./gameLogic.js')
 //
 const gameStart = function (response) {
   store.game = response.game
   store.game.cells = gameLogic.gameBoard
+  console.log(store.game)
   $('#game-board').show()
   $('#game-message').html("<p>let's play!</p>")
+  $('.box').html('')
 }
 //
 const startFailure = function (response) {

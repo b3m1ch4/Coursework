@@ -1,10 +1,10 @@
 'use strict'
 /* ===== required files ===== */
-const getFormFields = require('../../../lib/get-form-fields.js')
-const gameApi = require('./gameApi.js')
-const gameLogic = require('./gameLogic.js')
-const gameUi = require('./gameUi.js')
-const store = require('../store.js')
+let getFormFields = require('../../../lib/get-form-fields.js')
+let gameApi = require('./gameApi.js')
+let gameLogic = require('./gameLogic.js')
+let gameUi = require('./gameUi.js')
+let store = require('../store.js')
 // rewrite logic to check the API for valid move before updating the board
 let logicCheck = function (event) {
   let i = event.target.id.slice(0, 1)
@@ -39,15 +39,17 @@ const onFindGame = function (event) {
   .catch(gameUi.apiFail)
 }
 // onNewGame creates a new game in the Api
-const onNewGame = function (event) {
+let onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  gameLogic.gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+  undefined]
   gameApi.newGame(data)
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
 }
 // onPatchGame updates the api with the gameBoard's info
-const onPatchGame = function (event) {
+let onPatchGame = function (event) {
   event.preventDefault()
   let i = event.target.id.slice(0, 1)
   const data = {
@@ -63,7 +65,7 @@ const onPatchGame = function (event) {
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)
 }
-// event listeners 
+// event listeners
 let gameplayHandlers = function () {
   $('#games-index').on('click', onAllGames)
   $('#start-game').on('click', onNewGame)
