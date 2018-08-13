@@ -28,24 +28,24 @@ browser; responding to actions your users take and the data they input into the 
 - Products and Teams: Document your code and your code repository so others understand what you've built.
 
 # Wireframes
-```
-[Wireframe1]: https://i.imgur.com/c9bva13.jpg "First frame"
-[Wireframe2]: https://i.imgur.com/lGIx80A.jpg "Second frame"
-[Wireframe3]: https://i.imgur.com/2bwadfp.jpg "Third frame"
-[Wireframe4]: https://i.imgur.com/kZtfbOp.jpg "Fourth frame"
-```
+
+[Wireframe1]: `https://i.imgur.com/c9bva13.jpg` "First frame"
+[Wireframe2]: `https://i.imgur.com/lGIx80A.jpg` "Second frame"
+[Wireframe3]: `https://i.imgur.com/2bwadfp.jpg` "Third frame"
+[Wireframe4]: `https://i.imgur.com/kZtfbOp.jpg` "Fourth frame"
+
 
 # User stories
 As a user I would like:
-...to sign up with email and password
-...to be notified if I make a mistake
-...to to be notified if I do something succesfully
-...to sign in with email and password
-...to play tic tac toe
-...to start a new game
-...to be able to play multiple games without refreshing the page
-...to click a square to add my token
-...to be notified of a win or draw
+-to sign up with email and password
+-to be notified if I make a mistake
+-to to be notified if I do something succesfully
+-to sign in with email and password
+-to play tic tac toe
+-to start a new game
+-to be able to play multiple games without refreshing the page
+-to click a square to add my token
+-to be notified of a win or draw
 
 ## Version Control
 I plan on using github's branches to deploy different features. The individual
