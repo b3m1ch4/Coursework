@@ -11,12 +11,12 @@ settle the age old question "cats or dogs?" Players need to log into GA's server
 through the game in order to play. Once logged in, users may change their passwords,
 play the game, query the amount of games played and log out.
 
-# ¡DISCLAIMER!
+## ¡DISCLAIMER!
 I do not control the servers used to create this application. This app's functionality
 is entirely at the mercy of General Assembly and their continued maintenance
 of the game's server.
 
-# Project Objectives:
+## Project Objectives:
 - Command Line: Interacting with the computer and navigating the filesystem
 from the command line.
 - Source Control: Managing and interacting with a git repository to store
@@ -32,15 +32,14 @@ browser; responding to actions your users take and the data they input into the 
 - Deployment: Host a static web site in a managed hosting environment (GitHub Pages)
 - Products and Teams: Document your code and your code repository so others understand what you've built.
 
-# Wireframes
+## Wireframes
 
-- [Wireframe1]: <a href ="https://i.imgur.com/c9bva13.jpg"> "First frame" </a>
-- [Wireframe2]: <a href ="https://i.imgur.com/lGIx80A.jpg"> "Second frame" </a>
-- [Wireframe3]: <a href ="https://i.imgur.com/2bwadfp.jpg"> "Third frame" </a>
-- [Wireframe4]: <a href ="https://i.imgur.com/kZtfbOp.jpg"> "Fourth frame" </a>
+- [Wireframe1]: <a href ="https://i.imgur.com/c9bva13.jpg"> First frame </a>
+- [Wireframe2]: <a href ="https://i.imgur.com/lGIx80A.jpg"> Second frame </a>
+- [Wireframe3]: <a href ="https://i.imgur.com/2bwadfp.jpg"> Third frame </a>
+- [Wireframe4]: <a href ="https://i.imgur.com/kZtfbOp.jpg"> Fourth frame </a>
 
-
-# User stories
+## User stories
 As a user I would like:
 -to sign up with email and password
 -to be notified if I make a mistake
@@ -57,6 +56,10 @@ I plan on using github's branches to deploy different features. The individual
 features that I would like to target are: user signup/authentication, the game
 mechanics, user's experience (number of games, game logic etc.)
 
-## Additional Features
+## Unsolved issues
+- Condense the JQuery handlers into one line of code
+- Condense the win conditions into an object or array
+
+## Future Features
 If there is extra time, I would like to create a multiplayer version, so that
 two people could play on different devices.
