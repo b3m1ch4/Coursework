@@ -14,7 +14,8 @@ play the game, query the amount of games played and log out.
 ## ¡DISCLAIMER!
 I do not control the servers used to create this application. This app's functionality
 is entirely at the mercy of General Assembly and their continued maintenance
-of the game's server.
+of the game's server. The game will notify the user of any failure to connect with
+GA's API.
 
 ## Project Objectives:
 - Command Line: Interacting with the computer and navigating the filesystem
