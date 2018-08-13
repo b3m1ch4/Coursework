@@ -1,5 +1,5 @@
 # Coursework
-<h3>"bork bork meow" is from my coursework at General Assembly 2018 </h3>
+<h4>"bork bork meow" is from my coursework at General Assembly 2018 </h4>
 
 "bork bork meow" is a browser based game of tic tac toe. The game was built using
 HTML, CSS, Javascript and JQuery/Ajax. In order to pass class requirements,
@@ -10,6 +10,11 @@ JSON.
 settle the age old question "cats or dogs?" Players need to log into GA's server
 through the game in order to play. Once logged in, users may change their passwords,
 play the game, query the amount of games played and log out.
+
+# ¡DISCLAIMER!
+I do not control the servers used to create this application. This app's functionality
+is entirely at the mercy of General Assembly and their continued maintenance
+of the game's server.
 
 # Project Objectives:
 - Command Line: Interacting with the computer and navigating the filesystem
@@ -29,10 +34,10 @@ browser; responding to actions your users take and the data they input into the 
 
 # Wireframes
 
-[Wireframe1]: <a href ="https://i.imgur.com/c9bva13.jpg"> "First frame" </a>
-[Wireframe2]: <a href ="https://i.imgur.com/lGIx80A.jpg"> "Second frame" </a>
-[Wireframe3]: <a href ="https://i.imgur.com/2bwadfp.jpg"> "Third frame" </a>
-[Wireframe4]: <a href ="https://i.imgur.com/kZtfbOp.jpg"> "Fourth frame" </a>
+- [Wireframe1]: <a href ="https://i.imgur.com/c9bva13.jpg"> "First frame" </a>
+- [Wireframe2]: <a href ="https://i.imgur.com/lGIx80A.jpg"> "Second frame" </a>
+- [Wireframe3]: <a href ="https://i.imgur.com/2bwadfp.jpg"> "Third frame" </a>
+- [Wireframe4]: <a href ="https://i.imgur.com/kZtfbOp.jpg"> "Fourth frame" </a>
 
 
 # User stories
