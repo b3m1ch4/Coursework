@@ -44,7 +44,7 @@ let onNewGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   gameLogic.gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
-  gameLogic.current.player = 'X'
+  gameLogic.current.player = '🐱'
   gameLogic.current.over = false
   gameApi.newGame(data)
   .then(gameUi.gameStart)

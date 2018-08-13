@@ -1,5 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.google.com/specimen/Do+Hyeon');
 
 $black: #000;
 $glitter: #e8e9f3;
@@ -11,12 +12,14 @@ $white: #fff;
 
 body {
   background-color: $glitter;
+  color: $purple;
+  font-size: 20px;
 }
 
 .box {
   align-items: center;
   border: 1.5px dashed $white;
-  color: $sunny;
+  color: $white;
   display: flex;
   height: 80px;
   justify-content: center;
@@ -39,7 +42,10 @@ background-color: $vanilla;
 footer {
   background-color: $purple;
   color: $white;
+  // display: flex;
   font-size: 10px;
+  // justify-content: center;
+  width: 95%;
 }
 
 .game{
@@ -47,38 +53,34 @@ footer {
 }
 
 .game-board {
- width: 50%;
-}
 
-.game-board:after {
- content: "";
- display: block;
- padding-bottom: 100%;
 }
 
 #game-board {
-  background-color: $vanilla;
-  height: 50vw;
-  margin: 10px;
-  padding: 10px;
-  weight: 50vw;
+  height: 0;
+  padding-bottom: 25%;
+  width: 25%;
 }
 
 header {
   align-self: center;
   background-color: $purple;
   color: $white;
-  width: 65%;
+  display: flex;
+  font-family: Do Hyeon;
+  justify-content: center;
+  width: 95%;
 }
 
 .logged-in {
   display: none;
 }
 
-.logged-out{
+.logged-out {
 
 }
 
-.userMessage {
+.message {
+  font-family: Do Hyeon;
   font-size: 30px;
 }
