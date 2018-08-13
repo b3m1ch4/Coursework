@@ -17,7 +17,11 @@ const startFailure = function (response) {
 //
 const validMove = function (eventTarget, actualPlayer) {
   $(eventTarget).html(actualPlayer)
-  $('#game-message').html("it is player " + gameLogic.current.nextPlayer +"'s turn'")
+  if (actualPlayer == '🐱') {
+    $('#game-message').html("🐶's turn")
+  } else if (actualPlayer == '🐶') {
+    $('#game-message').html("🐱's turn")
+  }
 }
 //
 const invalidMove = function (response) {

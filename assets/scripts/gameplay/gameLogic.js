@@ -13,14 +13,14 @@ pull array using array indexes
 */
 let current = {
   player: '🐱',
-  nextPlayer: '🐶',
+  //nextPlayer: '🐶',
   changePlayer: function () {
-    if (this.player === '🐱') {
+    if (this.player == '🐱') {
       this.player = '🐶'
-      this.nextPlayer = '🐱'
-    } else if (this.player === '🐶')
+      //this.nextPlayer = '🐱'
+    } else if (this.player == '🐶')
       this.player = '🐱'
-      this.nextPlayer = '🐶'
+      //this.nextPlayer = '🐶'
   },
   over: false,
   endGame: function () {
