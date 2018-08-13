@@ -15,10 +15,10 @@ let current = {
   player: 'X',
   nextPlayer: 'O',
   changePlayer: function () {
-    if (this.player == 'X') {
+    if (this.player === 'X') {
       this.player = 'O'
       this.nextPlayer = 'X'
-    } else if (this.player == 'O')
+    } else if (this.player === 'O')
       this.player = 'X'
       this.nextPlayer = 'O'
   },

@@ -2,16 +2,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $black: #000;
-$blue: #7ee8fa;
-$green: #5cf64a;
-$magenta: #e516d4;
+$glitter: #e8e9f3;
+$lavender: #c09bd8;
+$purple: #9584bd;
 $sunny: #fff07c;
 $vanilla: #cacaaa;
 $white: #fff;
 
 body {
-  background-color: $vanilla;
-//  color: $sunny;
+  background-color: $glitter;
 }
 
 .box {
@@ -23,22 +22,30 @@ body {
   justify-content: center;
 }
 
-.grey {
-  background-color: $green;
+.container {
 }
 
-.teal {
-  background-color: $magenta;
+.check1 {
+  background-color: $sunny;
+}
+
+.check2 {
+  background-color: $lavender;
+}
+
+.game-board{
+  display: none;
 }
 
 #game-board {
-  display: none;
+  background-color: $vanilla;
   margin: 10px;
+  padding: 10px;
 }
 
 .header {
   align-self: center;
-  background-color: $blue;
+  background-color: $purple;
   color: $white;
   width: 65%;
 }

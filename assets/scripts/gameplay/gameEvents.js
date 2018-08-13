@@ -67,6 +67,7 @@ let onPatchGame = function (event) {
   .then(gameUi.apiUpdate)
   .catch(gameUi.apiFail)
 }
+//
 let onEndGame = function () {
   const data = {
   "game": {
