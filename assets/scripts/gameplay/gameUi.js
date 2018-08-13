@@ -6,7 +6,7 @@ let gameLogic = require('./gameLogic.js')
 const gameStart = function (response) {
   store.game = response.game
   store.game.cells = gameLogic.gameBoard
-  $('#game-board').show()
+  $('.game-board').show()
   $('#game-message').html(gameLogic.current.player + ' goes first')
   $('.box').html('')
 }
