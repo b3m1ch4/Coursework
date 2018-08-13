@@ -22,28 +22,49 @@ body {
   justify-content: center;
 }
 
-.container {
-}
-
 .check1 {
   background-color: $sunny;
+  color: $lavender;
 }
 
 .check2 {
   background-color: $lavender;
+  color: $sunny;
 }
 
-.game-board{
+.container {
+background-color: $vanilla;
+}
+
+footer {
+  background-color: $purple;
+  color: $white;
+  font-size: 10px;
+}
+
+.game{
   display: none;
+}
+
+.game-board {
+ width: 50%;
+}
+
+.game-board:after {
+ content: "";
+ display: block;
+ padding-bottom: 100%;
 }
 
 #game-board {
   background-color: $vanilla;
+  height: 50vw;
   margin: 10px;
   padding: 10px;
+  weight: 50vw;
 }
 
-.header {
+header {
   align-self: center;
   background-color: $purple;
   color: $white;
