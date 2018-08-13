@@ -41,15 +41,15 @@ browser; responding to actions your users take and the data they input into the 
 
 ## User stories
 As a user I would like:
--to sign up with email and password
--to be notified if I make a mistake
--to to be notified if I do something succesfully
--to sign in with email and password
--to play tic tac toe
--to start a new game
--to be able to play multiple games without refreshing the page
--to click a square to add my token
--to be notified of a win or draw
+- to sign up with email and password
+- to be notified if I make a mistake
+- to to be notified if I do something succesfully
+- to sign in with email and password
+- to play tic tac toe
+- to start a new game
+- to be able to play multiple games without refreshing the page
+- to click a square to add my token
+- to be notified of a win or draw
 
 ## Version Control
 I plan on using github's branches to deploy different features. The individual
