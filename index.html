@@ -15,6 +15,7 @@
       <h1>bork bork meow</h1>
       <div class="message" id="user-message"></div>
 
+
       <form class="border logged-out" id="sign-up">
         <fieldset>
           <legend>sign up</legend>
@@ -49,9 +50,13 @@
         </fieldset>
       </form>
 
+      <div class="message logged-in" id="game-message"></div>
+
       <form class="border logged-in" id="start-game">
+
         <fieldset>
           <button type="submit">new game</button>
+          <button type="submit" class="logged-in">rules</button>
         </fieldset>
       </form>
 
@@ -73,15 +78,15 @@
         </div>
       </div>
 
-      <div class="message logged-in" id="game-message"></div>
+
 
       <div>
       <form class="logged-in" id="games-index">
-        <button type="submit">get all games</button>
+        <button type="submit">how many games have I played?</button>
       </form>
     </div>
 
-      <form class="logged-in" id='find-game'>
+      <form class="logged-in hidden" id='find-game'>
         <input type="number" name="game[id]" placeholder='your game id'>
         <button type="submit">find game</button>
       </form>

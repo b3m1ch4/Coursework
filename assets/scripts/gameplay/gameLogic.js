@@ -13,11 +13,14 @@ pull array using array indexes
 */
 let current = {
   player: 'X',
+  nextPlayer: 'O',
   changePlayer: function () {
     if (this.player == 'X') {
       this.player = 'O'
+      this.nextPlayer = 'X'
     } else if (this.player == 'O')
       this.player = 'X'
+      this.nextPlayer = 'O'
   },
   over: false,
   endGame: function () {
@@ -75,6 +78,22 @@ current.winner = current.player + ' wins'
   current.endGame()
   }
 }
+//
+// let findWinner = function () {
+//   let xCount = 0
+//   let oCount = 0
+//   for (let i = 0; i < cells.length; i++) {
+//     if (cells[i] === 'X') {
+//     xCount += 1
+//   } else if (cells[i] === 'O') {
+//     oCount += 1
+//   }
+// } if (xCount > oCount) {
+//   return 'X won'
+// } else if (oCount > xCount) {
+//   return 'O won'
+//   }
+// }
 //
 module.exports = {
   gameBoard,

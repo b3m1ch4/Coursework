@@ -32,21 +32,20 @@ const onAllGames = function (event) {
     .catch(gameUi.apiFail)
 }
 //
-const onFindGame = function (event) {
-  event.preventDefault()
-  const id = $('#find-game input').val()
-  gameApi.oneGame(id)
-  .then(gameUi.findGame)
-  .catch(gameUi.apiFail)
-}
+// const onFindGame = function (event) {
+//   event.preventDefault()
+//   const id = $('#find-game input').val()
+//   gameApi.oneGame(id)
+//   .then(gameUi.findGame)
+//   .catch(gameUi.apiFail)
+// }
 // onNewGame creates a new game in the Api
 let onNewGame = function (event) {
   event.preventDefault()
-  store = null
-  gameLogic.current.player = 'X'
-  gameLogic.current.over = 'false'
   const data = getFormFields(event.target)
   gameLogic.gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+  gameLogic.current.player = 'X'
+  gameLogic.current.over = false
   gameApi.newGame(data)
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
@@ -61,7 +60,17 @@ let onPatchGame = function (event) {
       "index": i,
       "value": gameLogic.current.player
     },
-    "over": false
+    "over": gameLogic.current.over
+  }
+}
+  gameApi.patchGame(data)
+  .then(gameUi.apiUpdate)
+  .catch(gameUi.apiFail)
+}
+let onEndGame = function () {
+  const data = {
+  "game": {
+    "over": true
   }
 }
   gameApi.patchGame(data)
@@ -72,7 +81,7 @@ let onPatchGame = function (event) {
 let gameplayHandlers = function () {
   $('#games-index').on('click', onAllGames)
   $('#start-game').on('click', onNewGame)
-  $('#find-game').on('click', onFindGame)
+  // $('#find-game').on('click', onFindGame)
   // $('.box').on('click', onPatchGame, logicCheck)
   $('#0box').on('click', onPatchGame, logicCheck)
   $('#1box').on('click', onPatchGame, logicCheck)
@@ -86,5 +95,6 @@ let gameplayHandlers = function () {
 }
 //
 module.exports = {
-  gameplayHandlers
+  gameplayHandlers,
+  onEndGame
 }

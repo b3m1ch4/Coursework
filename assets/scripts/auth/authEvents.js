@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const authApi = require('./authApi.js')
 const authUi = require('./authUi.js')
+const gameEvents = require('../gameplay/gameEvents.js')
+const store = require('../store.js')
 //
 const onSignUp = function () {
   event.preventDefault()
@@ -25,22 +27,21 @@ const onSignIn = function () {
 const onChangePassword = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data from form', data)
   //
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFail)
 }
 
-const onSignOut = function () {
-//  event.preventDefault()
-  const data = getFormFields(event.target)
-  //
-  authApi.signOut(data)
+const onSignOut = function (event) {
+  event.preventDefault()
+  gameEvents.onEndGame()
+  console.log(gameEvents.onEndGame)
+  authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)
-}
-
+  }
+//
 const authHandlers = function () {
 // target the id of the form itself
   $('#sign-up').on('submit', onSignUp)

@@ -7,7 +7,7 @@ const gameStart = function (response) {
   store.game = response.game
   store.game.cells = gameLogic.gameBoard
   $('#game-board').show()
-  $('#game-message').html("<p>let's play!</p>")
+  $('#game-message').html(gameLogic.current.player + ' goes first')
   $('.box').html('')
 }
 //
@@ -16,9 +16,8 @@ const startFailure = function (response) {
 }
 //
 const validMove = function (eventTarget, actualPlayer) {
-  console.log('valid move')
-  $('#game-message').html('<p>nice move!</p>')
   $(eventTarget).html(actualPlayer)
+  $('#game-message').html("it is player " + gameLogic.current.nextPlayer +"'s turn'")
 }
 //
 const invalidMove = function (response) {
@@ -44,22 +43,22 @@ const apiFail = function (response) {
 }
 //
 const indexSuccess = function (response) {
+  console.log(response)
   response.games.forEach((game) => {
-  const gameId = '<p>' + game.id + '</p>'
-  const gameOver = '<p>' + game.over + '</p>'
-  const apiArray = '<p>' + game.cells + '</p>'
-  const idX = '<p>' + game.player_x.id + '</p>'
-  const emailX = '<p>' + game.player_x.email + '</p>'
-  // const idO = '<p>' + game.player_o.id + '</p>'
-  // const emailO = '<p>' + game.player_o.email + '</p>'
-  $('#game-message').append(response + gameId + gameOver + apiArray + idX + emailX)
+  // const gameId = '<p>' + game.id + '</p>'
+  // const gameOver = '<p>' + game.over + '</p>'
+  // const apiArray = '<p>' + game.cells + '</p>'
+  // const idX = '<p>' + game.player_x.id + '</p>'
+  // const emailX = '<p>' + game.player_x.email + '</p>'
+  let gamesPlayed = response.games.length
+  $('#game-message').html("you've played " + gamesPlayed + " games!")
   })
 }
 //
-const findGame = function (response) {
-  let game = response.game
-  $('#game-message').html(game)
-}
+// const findGame = function (response) {
+//   let game = response.game
+//   $('#game-message').html(game)
+// }
 //
 const apiUpdate = function (response) {
   store.game = response.game
@@ -73,6 +72,5 @@ module.exports = {
   promptNew,
   gameStart,
   indexSuccess,
-  findGame,
   apiUpdate
 }

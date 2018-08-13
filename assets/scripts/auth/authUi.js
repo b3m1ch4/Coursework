@@ -53,6 +53,7 @@ const signOutSuccess = function () {
   $('#user-message').addClass('success')
   $('.logged-in').hide()
   $('.logged-out').show()
+  $('#game-board').hide()
 }
 //
 const signOutFail = function () {
