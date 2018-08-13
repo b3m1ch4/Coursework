@@ -12,14 +12,15 @@ let logicCheck = function (event) {
     gameLogic.updateBoard(i, gameLogic.current.player)
     gameUi.validMove(event.target, gameLogic.current.player)
     gameLogic.winConditions()
-      if (gameLogic.current.over === false) {
+    store.game.over = gameLogic.current.over
+      if (store.game.over === false) {
         gameLogic.current.changePlayer()
-      } else if (gameLogic.current.over === true) {
+      } else if (store.game.over === true) {
         gameUi.declareWinner(gameLogic.current.winner)
        }
-    } else if (gameLogic.current.over === false) {
+    } else if (store.game.over === false) {
     gameUi.invalidMove()
-  } else if (gameLogic.current.over === true) {
+  } else if (store.game.over === true) {
     gameUi.promptNew(gameLogic.current.player)
   }
 }
@@ -41,9 +42,11 @@ const onFindGame = function (event) {
 // onNewGame creates a new game in the Api
 let onNewGame = function (event) {
   event.preventDefault()
+  store = null
+  gameLogic.current.player = 'X'
+  gameLogic.current.over = 'false'
   const data = getFormFields(event.target)
-  gameLogic.gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
-  undefined]
+  gameLogic.gameBoard = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
   gameApi.newGame(data)
   .then(gameUi.gameStart)
   .catch(gameUi.apiFail)
