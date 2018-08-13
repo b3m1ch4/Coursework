@@ -29,10 +29,10 @@ browser; responding to actions your users take and the data they input into the 
 
 # Wireframes
 
-[Wireframe1]: `https://i.imgur.com/c9bva13.jpg` "First frame"
-[Wireframe2]: `https://i.imgur.com/lGIx80A.jpg` "Second frame"
-[Wireframe3]: `https://i.imgur.com/2bwadfp.jpg` "Third frame"
-[Wireframe4]: `https://i.imgur.com/kZtfbOp.jpg` "Fourth frame"
+[Wireframe1]: <a href ="https://i.imgur.com/c9bva13.jpg"> "First frame" </a>
+[Wireframe2]: <a href ="https://i.imgur.com/lGIx80A.jpg"> "Second frame" </a>
+[Wireframe3]: <a href ="https://i.imgur.com/2bwadfp.jpg"> "Third frame" </a>
+[Wireframe4]: <a href ="https://i.imgur.com/kZtfbOp.jpg"> "Fourth frame" </a>
 
 
 # User stories
