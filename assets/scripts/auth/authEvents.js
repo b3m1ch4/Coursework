@@ -36,7 +36,6 @@ const onChangePassword = function () {
 const onSignOut = function (event) {
   event.preventDefault()
   gameEvents.onEndGame()
-  console.log(gameEvents.onEndGame)
   authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFail)

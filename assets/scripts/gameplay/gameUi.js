@@ -43,7 +43,6 @@ const apiFail = function (response) {
 }
 //
 const indexSuccess = function (response) {
-  console.log(response)
   response.games.forEach((game) => {
   // const gameId = '<p>' + game.id + '</p>'
   // const gameOver = '<p>' + game.over + '</p>'
