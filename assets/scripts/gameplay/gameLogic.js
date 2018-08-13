@@ -74,7 +74,7 @@ current.winner = current.player + ' wins'
   current.endGame()
 } else if (store.game.cells[0] !== undefined && store.game.cells[1] !== undefined && store.game.cells[2] !== undefined && store.game.cells[3] !== undefined && store.game.cells[4] !== undefined &&
   store.game.cells[5] !== undefined && store.game.cells[6] !== undefined && store.game.cells[7] !== undefined && store.game.cells[8] !== undefined && store.game.over === false) {
-  current.winner = 'you drew'
+  current.winner = '🐱 and 🐶 drew'
   current.endGame()
   }
 }
