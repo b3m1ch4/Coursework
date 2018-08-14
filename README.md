@@ -62,5 +62,7 @@ mechanics, user's experience (number of games, game logic etc.)
 - Condense the win conditions into an object or array
 
 ## Future Features
-If there is extra time, I would like to create a multiplayer version, so that
-two people could play on different devices.
+If there is extra time, I would like to
+- make the CSS even better
+- make a media query for mobile devices
+- create a multiplayer version, so that two people could play on different devices.
