@@ -7,6 +7,7 @@ const gameStart = function (response) {
   store.game = response.game
   store.game.cells = gameLogic.gameBoard
   $('.game-board').show()
+  $('#games-index').show()
   $('#game-message').html(gameLogic.current.player + ' goes first')
   $('.box').html('')
 }
@@ -54,7 +55,7 @@ const indexSuccess = function (response) {
   // const idX = '<p>' + game.player_x.id + '</p>'
   // const emailX = '<p>' + game.player_x.email + '</p>'
   let gamesPlayed = response.games.length
-  $('#game-message').html("you've played " + gamesPlayed + " games!")
+  $('#game-message').html("you've played " + gamesPlayed + " game(s)!")
   })
 }
 //
