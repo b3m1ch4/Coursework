@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>bork bork meow</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <meta charset='utf-8'>
+    </head>
+
+    <body>
+
+      <header>
+      <h1>🐶 bork bork meow 🐱</h1>
+      <div class="message" id="user-message"></div>
+    </header>
+
+
+      <form class="border logged-out" id="sign-up">
+        <fieldset>
+          <legend>sign up</legend>
+          <input type ="email" name="credentials[email]" placeholder ="email">
+          <input type ="password" name="credentials[password]" placeholder ="password">
+          <input type ="password" name="credentials[password_confirmation]" placeholder ="confirm password">
+          <button type="submit">sign up</button>
+        </fieldset>
+      </form>
+
+      <form class="border logged-out" id="sign-in">
+        <fieldset>
+        <legend>sign in</legend>
+        <input type ="email" name="credentials[email]" placeholder ="email">
+        <input type ="password" name="credentials[password]" placeholder ="password">
+        <button type="submit">sign in</button>
+      </fieldset>
+      </form>
+
+      <form class="border logged-in" id="change-password">
+           <fieldset>
+           <legend>change password</legend>
+           <input type ="password" name="passwords[old]" placeholder ="old password">
+           <input type ="password" name="passwords[new]" placeholder ="new password">
+           <button type="submit">change password</button>
+         </fieldset>
+         </form>
+
+      <form class="border logged-in" id="sign-out1">
+        <fieldset>
+          <button type="submit">sign out</button>
+        </fieldset>
+      </form>
+
+      <form class="border game" id="sign-out2">
+        <fieldset>
+          <button type="submit">sign out</button>
+        </fieldset>
+      </form>
+
+      <div class="message logged-in" id="game-message"></div>
+
+      <form class="border logged-in" id="start-game">
+
+        <fieldset>
+          <button type="submit">start a game meow!</button>
+        </fieldset>
+      </form>
+
+      <div class="container">
+      <div class="game game-board" id="game-board">
+        <div class="row">
+          <div class="col-sm-4 box check1" id="0box">token: </div>
+          <div class="col-sm-4 box check2" id="1box">token: </div>
+          <div class="col-sm-4 box check1" id="2box">token: </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 box check2" id="3box">token: </div>
+          <div class="col-sm-4 box check1" id="4box">token: </div>
+          <div class="col-sm-4 box check2" id="5box">token: </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 box check1" id="6box">token: </div>
+          <div class="col-sm-4 box check2" id="7box">token: </div>
+          <div class="col-sm-4 box check1" id="8box">token: </div>
+        </div>
+      </div>
+    </div>
+
+      <div>
+      <form class="played-1" id="games-index">
+        <button type="submit">how many games have I played?</button>
+      </form>
+    </div>
+
+
+<footer>
+  <h6>Impressum</h6>
+  <p>Michael Francis H Brown </p>
+  <p>Somerville, MA </p>
+  <p>Email: michael@michaelcodes.it</p>
+  <p>Look for me on <a href="https://github.com/b3m1ch4">GitHub</a></p>
+</footer>
+
+    </body>
+</html>
