@@ -7,6 +7,7 @@ const gameStart = function (response) {
   store.game = response.game
   store.game.cells = gameLogic.gameBoard
   $('.game-board').show()
+  $('#games-index').show()
   $('#game-message').html(gameLogic.current.player + ' goes first')
   $('.box').html('')
 }
